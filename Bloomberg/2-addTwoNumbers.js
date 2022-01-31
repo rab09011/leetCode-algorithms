@@ -13,10 +13,28 @@ class ListNode {
   }
 }
 
+/* logic:
+1. construct dummy node and have current head pointer point to it. set carry to 0
+2. while l1 or l2 exist:
+  - x & y variables will be the val stored in the nodes that l1 and l2 point to respectively
+  - if either linked list does not exist, set the variable to 0;
+  - set sum to summation of both variables and carry variable, if it exists;
+  - re-assign carry to the floor integer of the sum divided by 10
+  - re-assign sum to be the remainder of the sum divided by 10;
+  - create new node with its val variable set to the new sum integer;
+  - let current head's next variable point to the newly created node;
+  - if l1 exists and its next variables point to a node, reassign the head pointer l1 to respective next node;
+  - same for l2
+  - reassign newHead pointer to current head's next node;
+3. if carry is left over, create new node with val set to carry, then set current head's next pointer to this new node
+4. return dummy node's next variable, i.e. the first real node of the newly made linked list.
+
+*/
+
 var addTwoNumbers = function (l1, l2) {
   let dummyNode = new ListNode(0);
 
-  let newHead = dummyNode;
+  let current = dummyNode;
 
   let carry = 0;
 
@@ -30,15 +48,15 @@ var addTwoNumbers = function (l1, l2) {
 
     sum = sum % 10;
 
-    newHead.next = new ListNode(sum);
+    current.next = new ListNode(sum);
 
     l1 = l1 && l1.next;
     l2 = l2 && l2.next;
 
-    newHead = newHead.next;
+    current = current.next;
   }
 
-  if (carry > 0) newHead.next = new ListNode(carry);
+  if (carry > 0) current.next = new ListNode(carry);
 
   return dummyNode.next;
 };
