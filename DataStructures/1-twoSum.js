@@ -26,4 +26,6 @@ const twoSum = function (nums, target) {
 };
 
 let test = [2, 7, 11, 15];
-console.log(twoSum(test, 9));
+let test1 = [1, 2, 3, 4, 5];
+//console.log(twoSum(test, 9));
+console.log(twoSum(test1, 5));

@@ -73,4 +73,4 @@ const f = new ListNode(5);
 
 //console.log(addTwoNumbers(a, b));
 //console.log(addTwoNumbers(c, d));
-console.log(addTwoNumbers(e, f));
+//console.log(addTwoNumbers(e, f));
