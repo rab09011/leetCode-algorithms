@@ -21,18 +21,13 @@
   reset end pointer to what it was -1
 */
 
-function reverseWords(arr) {
-  if (arr.length === 1) {
-    return arr;
-  }
+const reverseWords = function(arr) {
+  let result = [];
 
-  if (arr.length === 0) {
-    return [];
-  }
+  if (arr.length === 1) return arr;
+  if (arr.length === 0) return result;
 
   let end = arr.length - 1;
-
-  let result = [];
 
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] === " ") {
@@ -43,7 +38,6 @@ function reverseWords(arr) {
       }
 
       result.push(" ");
-
       end = initial - 1;
     }
 
