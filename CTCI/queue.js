@@ -1,6 +1,6 @@
 class Node {
   data;
-  next = Node();
+  next;
   constructor(data) {
     this.data = data;
   }
@@ -23,17 +23,17 @@ class Queue {
     if (this.tail != null) {
       this.tail.next = node;
     }
-    tail = node;
-    if (head == null) {
-      head = node;
+    this.tail = node;
+    if (this.head == null) {
+      this.head = node;
     }
   }
 
   remove() {
     data = this.head.data;
-    head = head.next;
-    if (head == null) {
-      tail = null;
+    this.head = head.next;
+    if (this.head == null) {
+      this.ail = null;
     }
     return data;
   }
