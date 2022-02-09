@@ -1,5 +1,6 @@
-import { Stack } from "./stack";
-export class TwoStackQueue {
+import {Stack} from '../stack';
+
+class TwoStackQueue {
   stackNewestOnTop = new Stack();
   stackOldestOnTop = new Stack();
 
